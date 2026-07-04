@@ -13,14 +13,14 @@ public:
     void push(int value) {
         if(st.size()==0){
             st.push({value,value});
-            // mini=value;
+            mini=value;
 
         }else{
             mini=min(value,mini);
 
 
-            st.push({value,min(value,st.top().second)});
-            mini=st.top().second;
+            st.push({value,mini});
+           
 
             
         }
@@ -34,6 +34,8 @@ public:
     
     void pop() {
         st.pop();
+        if(st.size()!=0)
+        mini=st.top().second;
         
     }
     
