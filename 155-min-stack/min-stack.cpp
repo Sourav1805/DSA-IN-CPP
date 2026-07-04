@@ -2,7 +2,7 @@ class MinStack {
 public:
 
     stack<pair<int,int>>st;
-    // int mini=INT_MAX;
+    int mini=INT_MAX;
 
 
     MinStack() {
@@ -16,11 +16,11 @@ public:
             // mini=value;
 
         }else{
-            // mini=min(value,mini);
+            mini=min(value,mini);
 
 
             st.push({value,min(value,st.top().second)});
-            
+            mini=st.top().second;
 
             
         }
