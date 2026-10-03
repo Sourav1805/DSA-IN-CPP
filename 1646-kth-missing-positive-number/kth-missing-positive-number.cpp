@@ -7,9 +7,10 @@ public:
         {
             int mid=lo+(hi-lo)/2;
             int miss=arr[mid]-(mid+1);
-             if(miss<k)lo=mid+1;
+            // if(miss==k)return arr[mid]-1;
+            if(miss<k)lo=mid+1;
             else hi=mid-1;
         }
-        return lo+k;
+        return lo +k;
     }
 };
