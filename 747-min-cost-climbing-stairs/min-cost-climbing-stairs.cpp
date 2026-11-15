@@ -4,7 +4,9 @@ public:
         if(idx==0 || idx==1)return cost[idx];
         // if(idx==cost.size())cost[idx]=0;
         if(dp[idx]!=-1)return dp[idx];
-        return dp[idx]=cost[idx]+min(helper(cost,ans,idx-1,dp),helper(cost,ans,idx-2,dp));
+        dp[idx]=cost[idx]+min(helper(cost,ans,idx-1,dp),helper(cost,ans,idx-2,dp));
+
+        return -1;
     }
     int minCostClimbingStairs(vector<int>& cost) {
         int ans=0;
